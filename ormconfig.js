@@ -6,12 +6,11 @@ module.exports = {
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
   entities: ['dist/**/*.entity{.ts,.js}'],
-  synchronize: process.env.DB_SYNC == 'true',
-  migrations: ['./dist/database/migrations/**/*.ts'],
+  synchronize: process.env.DB_SYNC == 'false',
+  migrations: ['./dist/database/migrations/**/*.js'],
   cli: {
     entitiesDir: ['./dist/**/*.entity'],
     migrationsDir: ['./dist/database/migrations/'],
   },
-  migrationsTableName: "migrations_typeorm",
-  migrationsRun: true,
+  migrationsRun: true
 }; 
