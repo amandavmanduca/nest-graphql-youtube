@@ -12,6 +12,9 @@ import { User } from './user.entity';
 
 @Injectable()
 export class UserService {
+  findById(id: string) {
+    throw new Error('Method not implemented.');
+  }
   constructor(
     @InjectRepository(User)
     private userRepository: Repository<User>,
@@ -42,8 +45,8 @@ export class UserService {
     return await this.userRepository.find();
   }
 
-  async updateUser(data: UpdateUserInput): Promise<User> {
-    const user = await this.getUserById(data.id);
+  async updateUser(data: UpdateUserInput, user: User): Promise<User> {
+    // const user = await this.getUserById(data.id);
     return this.userRepository.save({ ...user, ...data });
   }
 
