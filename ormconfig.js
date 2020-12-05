@@ -7,10 +7,10 @@ module.exports = {
   database: process.env.DB_NAME,
   entities: ['dist/**/*.entity{.ts,.js}'],
   synchronize: process.env.DB_SYNC == 'false',
-  migrations: ['./dist/database/migrations/**/*.js'],
+  migrations: ['dist/database/migrations/**/*.js'],
   cli: {
-    entitiesDir: ['./dist/**/*.entity'],
-    migrationsDir: ['./dist/database/migrations/'],
+    entitiesDir: ['src/**/*.entity'],
+    migrationsDir: ['src/database/migrations/'],
   },
   migrationsRun: true
 }; 
